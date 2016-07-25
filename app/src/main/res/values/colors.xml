@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="accent_material_dark">#e7ed33</color>
+    <color name="accent_material_light">#33aaaa</color>
+    <color name="dim_foreground_material_dark">#00ff00</color>
+
+    <!--<color name="Indigo_colorPrimaryDark">#303f9f</color>-->
+    <!--<color name="Indigo_colorPrimary">#3f51b5</color>-->
+    <!--<color name="Indigo_nav_color">#4675FF</color>-->
+
+    <color name="Indigo_colorPrimaryDark">#713dc2</color>
+    <color name="Indigo_colorPrimary">#7b4cdb</color>
+    <color name="Indigo_nav_color">#906ffe</color>
+
+</resources>
