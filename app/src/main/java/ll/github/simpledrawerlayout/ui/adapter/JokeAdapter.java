@@ -16,6 +16,7 @@ import java.util.List;
 
 import ll.github.simpledrawerlayout.R;
 import ll.github.simpledrawerlayout.bean.JokeDetail;
+import ll.github.simpledrawerlayout.utils.ImageUtils;
 
 
 /**
@@ -96,16 +97,17 @@ public class JokeAdapter extends RecyclerView.Adapter<JokeAdapter.ViewHolder> {
             }
         }
 
-        private void bindImageUrl(String imageUrl){
+        private void bindImageUrl(String imageUrl) {
             if (null != imageUrl) {
                 //加载网络图片
-                Glide
-                        .with(mContext)
-                        .load(imageUrl)
-                        .centerCrop()
-                        .placeholder(R.mipmap.ic_launcher)
-                        .crossFade()
-                        .into(mImageView);
+//                        Glide
+//                        .with(mContext)
+//                        .load(imageUrl)
+//                        .centerCrop()
+//                        .placeholder(R.mipmap.ic_launcher)
+//                        .crossFade()
+//                        .into(mImageView);
+                ImageUtils.displayImage(mContext,mImageView,imageUrl);
             }
         }
     }

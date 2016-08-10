@@ -1,5 +1,7 @@
 package ll.github.simpledrawerlayout.ui.fragment;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -28,6 +30,7 @@ import ll.github.animationlibrary.adapter.ScaleInAnimatorAdapter;
 import ll.github.simpledrawerlayout.Constants;
 import ll.github.simpledrawerlayout.R;
 import ll.github.simpledrawerlayout.bean.JokeDetail;
+import ll.github.simpledrawerlayout.ui.activity.JokeDetailActivity;
 import ll.github.simpledrawerlayout.ui.adapter.JokeAdapter;
 import ll.github.simpledrawerlayout.ui.widget.BGARefreshLayoutWithLoadView;
 
@@ -101,7 +104,7 @@ public class JokeFragment extends Fragment implements BGARefreshLayout.BGARefres
     @Override
     public boolean onBGARefreshLayoutBeginLoadingMore(BGARefreshLayout refreshLayout) {
         //如果最后一次请求的结果不满30条，说明已经拿到了最底部的新闻数据
-        if((detailAll.size()%itemCount) != 0){
+        if((detailAll.size() % itemCount) != 0){
             mBGARfereshLayoutWithLoadView.updateLoadingMoreText("没有更多数据啦。。。");
             mBGARfereshLayoutWithLoadView.hideLoadingMoreImage();
             handler.sendEmptyMessage(2);
@@ -236,7 +239,17 @@ public class JokeFragment extends Fragment implements BGARefreshLayout.BGARefres
         mJokeAdapter.setOnItemClickListener(new JokeAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, JokeDetail data) {
-                Toast.makeText(getContext(),"内容：" + data.content, Toast.LENGTH_LONG).show();
+//                Toast.makeText(getContext(),"内容：" + data.content, Toast.LENGTH_LONG).show();
+
+//                if(data.getPicUrl() == null || "".equals(data.getPicUrl())){
+//                    Toast.makeText(getContext(),"内容：" + data.content, Toast.LENGTH_LONG).show();
+//                }else{
+                    Intent intent = new Intent(getActivity(), JokeDetailActivity.class);
+                    Bundle bundle = new Bundle();
+                    bundle.putParcelable(Constants.JOKE_DETAIL,data);
+                    intent.putExtras(bundle);
+                    startActivity(intent);
+//                }
             }
         });
 

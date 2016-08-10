@@ -25,4 +25,6 @@ public class Constants {
 
     public static String newsUrl = "http://api.1-blog.com/biz/bizserver/news/list.do";
     public static String jokeUrl = "http://api.1-blog.com/biz/bizserver/xiaohua/list.do";
+
+    public static final String JOKE_DETAIL = "joke_detail";
 }
