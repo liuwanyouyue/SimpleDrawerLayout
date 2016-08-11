@@ -54,13 +54,8 @@ public class JokeDetailActivity extends AppCompatActivity {
         collapsingToolbar.setExpandedTitleColor(getResources().getColor(R.color.accent_material_dark));
 
         if (data.getPicUrl() == null || "".equals(data.getPicUrl())) {
-            Glide
-                    .with(this)
-                    .load(R.mipmap.ic_launcher)
-                    .centerCrop()
-                    .crossFade()
-                    .into(image);
 
+            ImageUtils.displayTitleImage(this, image, R.mipmap.ic_launcher);
         } else {
             ImageUtils.displayTitleImage(this, image, data.getPicUrl());
         }

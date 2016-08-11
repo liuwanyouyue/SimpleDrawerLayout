@@ -21,12 +21,11 @@ public class ImageUtils {
                 .into(imageView);
     }
 
-    public static void displayTitleImage(Context context,ImageView imageView, String url){
+    public static void displayTitleImage(Context context,ImageView imageView, Object url){
         Glide
                 .with(context)
                 .load(url)
                 .centerCrop()
-//                .placeholder(R.mipmap.ic_launcher)
                 .crossFade()
                 .into(imageView);
     }
